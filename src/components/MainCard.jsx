@@ -3,7 +3,7 @@ import "./maincard.scss";
 import { BsWind } from "react-icons/bs";
 import { WiSunrise, WiSunset, WiHumidity } from "react-icons/wi";
 import moment from "moment";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MainCard = ({ data }) => {
   if (data.coord) {
@@ -13,16 +13,19 @@ const MainCard = ({ data }) => {
           <img
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`}
             alt=""
-            srcset=""
             height={400}
           />
           <div className="header__nav">
             <ul className="nav_list">
               <li className="nav__items">
-                <Link to="#">Hourly Forcast</Link>
+                <Link style={{ textDecoration: "none" }} to="/hourly">
+                  Hourly Forcaste
+                </Link>
               </li>
               <li className="nav__items">
-                <Link to="#">5 Day Forcast</Link>
+                <Link style={{ textDecoration: "none" }} to="/forcast">
+                  5 Day Forcast
+                </Link>
               </li>
             </ul>
           </div>
@@ -62,7 +65,11 @@ const MainCard = ({ data }) => {
       </div>
     );
   }
-  return <div>hello world</div>;
+  return (
+    <div className="loader">
+      <h3>Loading Data...</h3>
+    </div>
+  );
 };
 
 export default MainCard;
