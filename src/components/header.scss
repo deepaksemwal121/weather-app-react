@@ -1,0 +1,66 @@
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.header__logo {
+  display: flex;
+  text-transform: uppercase;
+  color: white;
+  align-items: center;
+  width: 20%;
+}
+
+.header__logo > h3 {
+  font-size: 25px;
+  font-family: "SF Pro Display Bold";
+}
+.header__nav {
+  width: 30%;
+}
+.header__nav .nav_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+.nav__items {
+  color: white;
+  font-size: 16px;
+  font-family: "SF Pro Display Regular";
+  background-color: rgba(1, 1, 1, 0.1);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+.search__wrapper {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.search__wrapper input {
+  padding: 1rem;
+  border: none;
+  border-radius: 7px 0 0 7px;
+  width: 400px;
+  font-size: 20px;
+}
+.search__wrapper button {
+  border: none;
+  background-color: gray;
+  height: 55px;
+  width: 55px;
+  padding: 0;
+}
+
+.version__value {
+  width: 10%;
+}
