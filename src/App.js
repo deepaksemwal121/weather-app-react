@@ -10,17 +10,11 @@ import HourlyCard from "./components/HourlyCard";
 function App() {
   const [input, setInput] = useState("dehradun");
   const [data, setData] = useState([]);
-  const [forcast, setForcast] = useState([]);
-
-  useEffect(() => {
-    searchCityData();
-    forCastDay();
-  }, []);
 
   const searchCityData = () => {
     axios
       .post(
-        `https://api.openweathermap.org/data/2.5/weather?q=${input.toLowerCase()}&appid=b42c90d277fadf665712d2b024a786e1&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${input.toLowerCase()}&appid=a571a22837538f854e63cc3ba294b004&units=metric`
       )
       .then((response) => {
         console.log(response.data);
@@ -28,16 +22,6 @@ function App() {
       });
   };
 
-  const forCastDay = () => {
-    axios
-      .post(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${input.toLowerCase()}&appid=b42c90d277fadf665712d2b024a786e1`
-      )
-      .then((response) => {
-        console.log(response.data);
-        setForcast(response.data);
-      });
-  };
   return (
     <div className="App">
       <Header setInput={setInput} searchCityData={searchCityData} />
@@ -47,7 +31,7 @@ function App() {
             <MainCard data={data} />
           </Route>
           <Route path="/forcast">
-            <ForcastCard forcast={forcast} />
+            <ForcastCard inputData={input} />
           </Route>
           <Route path="/hourly">
             <HourlyCard />
